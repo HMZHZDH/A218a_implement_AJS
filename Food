@@ -9,13 +9,13 @@ public class Food {
     private int Calories;
 
     public Food (String Type, String Name, int Calories) { //A constructor with 3 parameters 
-    //Making sure the variables above and parameters have the same values 
+    //The variables above have the same value as the parameters
         this.Type = Type;
         this.Name = Name;
         this.Calories = Calories;
         this.SystemTime = String.format("%s %tB %<te, %<tT", "", date ); //The Date object is formated into a String that changes the data into hours, minutes, seconds  amd a date info
     }
-// Getters to give a value of the private variables whenever they are called later on in the code 
+// Getters return values when the message to an object is sent 
     public String getSystemTime() {
         return SystemTime;
     }
