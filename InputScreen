@@ -21,10 +21,10 @@ public class MainActivity extends AppCompatActivity {
         // Get a reference to the AutoCompleteTextView in the layout
         AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.autoCompleteFood);
 // Get the string array
-        String[] countries = getResources().getStringArray(R.array.foods);
+        String[] foods = getResources().getStringArray(R.array.foods);
 // Create the adapter and set it to the AutoCompleteTextView
         ArrayAdapter<String> adapter =
-                new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, countries);
+                new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, foods);
         textView.setAdapter(adapter);
 
 
