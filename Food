@@ -1,15 +1,15 @@
 import java.util.Date;
 
 public class Food {
-    private Date date = new Date(); //Object that take the time of inputting data (kind of a built in function) 
+    private Date date = new Date(); //Object that takes the time of inputting data (kind of a built in function) 
    // Creating some variables we need for the user to input in the intro screen
     private String Type;
     private String Name;
     private String SystemTime;
     private int Calories;
 
-    public Food (String Type, String Name, int Calories) { //A constructor created in the class with 3 parameters 
-    //Making sure the variables above and parameters ahve the same values 
+    public Food (String Type, String Name, int Calories) { //A constructor with 3 parameters 
+    //Making sure the variables above and parameters have the same values 
         this.Type = Type;
         this.Name = Name;
         this.Calories = Calories;
