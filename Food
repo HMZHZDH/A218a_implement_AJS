@@ -1,7 +1,7 @@
 import java.util.Date;
 
 public class Food {
-    private Date date = new Date(); //Object that takes the time of inputting data (kind of a built in function) 
+    private Date date = new Date(); //Object that takes the time of inputting data
    // Creating some variables we need for the user to input in the intro screen
     private String Type;
     private String Name;
