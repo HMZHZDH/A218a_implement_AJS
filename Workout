@@ -5,7 +5,7 @@ public class Workout {
     private String StartTime;
     private String EndTime;
 
-    public Workout(int Duration, int Rating, int Distance,String StarTime, String EndTime){
+    public Workout(int Rating, int Distance,String StarTime, String EndTime){
         this.Duration = Duration;
         this.Rating = Rating;
         this.Distance = Distance;
