@@ -1,1 +1,49 @@
+public class Workout {
+    private int Duration;
+    private int Rating;
+    private int Distance;
+    private String StartTime;
+    private String EndTime;
+
+    public Workout(int Duration, int Rating, int Distance,String StarTime, String EndTime){
+        this.Duration = Duration;
+        this.Rating = Rating;
+        this.Distance = Distance;
+        this.StartTime = StarTime;
+        this.EndTime = EndTime;
+
+    }
+    public void setDuration(int Duration){
+
+        this.Duration = Duration;
+
+    }
+    public int getDuration(){
+        return this.Duration;
+    }
+    public void setRating (int Rating){
+        this.Rating = Rating;
+    }
+    public int getRating(){
+        return this.Rating;
+    }
+    public void setDistance(int Distance){
+        this.Distance = Distance;
+    }
+    public int getDistance(){
+        return this.Distance;
+    }
+    public void setStartTime(String StartTime){
+        this.StartTime = StartTime;
+    }
+    public String getStartTime (){
+        return this.StartTime;
+    }
+    public void setEndTime(String EndTime){
+        this.EndTime = EndTime;
+    }
+    public String getEndTime(){
+        return this.EndTime;
+    }
+}
 
