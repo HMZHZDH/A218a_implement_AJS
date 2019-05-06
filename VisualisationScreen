@@ -1,0 +1,57 @@
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
+import com.anychart.AnyChart;
+import com.anychart.AnyChartView;
+import com.anychart.chart.common.dataentry.DataEntry;
+import com.anychart.chart.common.dataentry.ValueDataEntry;
+import com.anychart.charts.Pie;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    protected void drawTheTing(int Carbs, int prot, int fib)    //..................................Draws the pie chart displaying macros.
+    {
+        Pie CalorieCounter = AnyChart.pie();   //...................................................Create a new pie object from the AnyChart library.
+        List<DataEntry> Calories = new ArrayList<>();   //..........................................Create a new list for data entry.
+        Calories.add(new ValueDataEntry("Carbohydrates", Carbs));    //..........................Add new entry to the array list "calories".
+        Calories.add(new ValueDataEntry("Protein", prot));  //...................................Add new entry to the array list "calories".
+        Calories.add(new ValueDataEntry("Fibres", fib));    //...................................Add new entry to the array list "calories".
+
+        CalorieCounter.data(Calories);  //..........................................................Pass the data in the array list to the pie chart.
+
+        AnyChartView anyChartView = (AnyChartView) findViewById(R.id.any_chart_view); //............Set the view to any_chart_view.
+        anyChartView.setChart(CalorieCounter);  //..................................................Set the chart in the view so it can appear.
+    }
+
+    protected void updateChart(int totalcal, int min, int max)  //..................................Updates the donut chart calorie counter.
+    {
+        TextView numberOfCals = findViewById(R.id.number_of_calories);
+        numberOfCals.setText(String.valueOf(totalcal) + " / " + min);   //..........................Updates text under the calorie counter
+            //......................................................................................Calculates the size of the slice
+        ProgressBar pieChart = findViewById(R.id.stats_progressbar);    //..........................Assigns the attributes of the chart to pieChart
+        double d = (double) totalcal / max;
+        int progress = (int) (d * 100);
+        pieChart.setProgress(progress); //..........................................................Draws the new slice.
+    }
+
+    protected void setupChart(int min, int max)
+    {
+        TextView Initial = findViewById(R.id.number_of_calories);
+        Initial.setText("0" + " / " + min);
+
+        ProgressBar PieChart = findViewById(R.id.background_progressbar);
+        int progress = (max/min) * 100;
+        PieChart.setProgress(progress);
+    }
+}
