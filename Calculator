@@ -1,5 +1,3 @@
-package poopity.scoop.poop.dk.aau
-
 import java.lang.Math;
 
 public class Calculator() {     
