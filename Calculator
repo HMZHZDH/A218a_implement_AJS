@@ -52,7 +52,8 @@ public class Calculator() {
     public static boolean getCaloriesInRange() {
         return CaloriesInRange;
     }
-        private int calculateTime (String startTime, String endTime){
+    
+    private int calculateTime (String startTime, String endTime){
         String ST = startTime;
         String [] separator = ST.split(":");   
     }
