@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
     {
         Pie CalorieCounter = AnyChart.pie();   //...................................................Create a new pie object from the AnyChart library.
         List<DataEntry> Calories = new ArrayList<>();   //..........................................Create a new list for data entry.
-        Calories.add(new ValueDataEntry("Carbohydrates", Carbs));    //..........................Add new entry to the array list "calories".
-        Calories.add(new ValueDataEntry("Protein", prot));  //...................................Add new entry to the array list "calories".
-        Calories.add(new ValueDataEntry("Fibres", fib));    //...................................Add new entry to the array list "calories".
+        Calories.add(new ValueDataEntry("Carbohydrates", Carbs));    //.............................Add new entry to the array list "calories".
+        Calories.add(new ValueDataEntry("Protein", prot));  //......................................Add new entry to the array list "calories".
+        Calories.add(new ValueDataEntry("Fibres", fib));    //......................................Add new entry to the array list "calories".
 
         CalorieCounter.data(Calories);  //..........................................................Pass the data in the array list to the pie chart.
 
