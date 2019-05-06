@@ -1,19 +1,21 @@
 import java.util.Date;
 
 public class Food {
-    private Date date = new Date();
+    private Date date = new Date(); //Object that take the time of inputting data (kind of a built in function) 
+   // Creating some variables we need for the user to input in the intro screen
     private String Type;
     private String Name;
     private String SystemTime;
     private int Calories;
 
-    public Food (String Type, String Name, int Calories) {
+    public Food (String Type, String Name, int Calories) { //A constructor created in the class with 3 parameters 
+    //Making sure the variables above and parameters ahve the same values 
         this.Type = Type;
         this.Name = Name;
         this.Calories = Calories;
-        this.SystemTime = String.format("%s %tB %<te, %<tT", "", date );
+        this.SystemTime = String.format("%s %tB %<te, %<tT", "", date ); //The Date object is formated into a String that changes the data into hours, minutes, seconds  amd a date info
     }
-
+// Getters to give a value of the private variables whenever they are called later on in the code 
     public String getSystemTime() {
         return SystemTime;
     }
