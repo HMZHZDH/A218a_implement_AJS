@@ -1,10 +1,95 @@
+        
+    private static double LowCalorieRange;
+    private static double HighCalorieRange;
+    private static boolean CaloriesInRange;
+    private static int TotalCalories;
 
-    private int calculateTime (String startTime, String endTime){
-        String ST = startTime;
-        String [] separator = ST.split(":");
-        
-        
-        
-
+    public Calculator() {
+        TotalCalories = 0;
+        LowCalorieRange = 0;
+        HighCalorieRange = 0;
+        CaloriesInRange = false;
     }
+
+    public static void CalculateRange(int weight, int height, int age, double activityLevel){
+        LowCalorieRange = ((weight * 0.9) * 24)*activityLevel;
+        HighCalorieRange = ((weight * 0.9) * 24)*activityLevel;
+
+        switch(age) {
+            case 14:
+            case 15:
+            case 16:
+            case 17:
+            case 18:
+                LowCalorieRange = LowCalorieRange * 1;
+                HighCalorieRange = HighCalorieRange * 1;
+                break;
+            case 19:
+            case 20:
+            case 21:
+            case 22:
+            case 23:
+            case 24:
+            case 25:
+            case 26:
+            case 27:
+            case 28:
+                LowCalorieRange = LowCalorieRange * 0.9;
+                HighCalorieRange = HighCalorieRange * 0.9;
+                break;
+            case 29:
+            case 30:
+            case 31:
+            case 32:
+            case 33:
+            case 34:
+            case 35:
+            case 36:
+            case 37:
+            case 38:
+                LowCalorieRange = LowCalorieRange * 0.8;
+                HighCalorieRange = HighCalorieRange * 0.8;
+                break;
+        }
+    }
+
+    public static void AreCaloriesInRange() {
+        if (TotalCalories < LowCalorieRange || TotalCalories > HighCalorieRange) {
+            CaloriesInRange = false;
+        }
+        else if (LowCalorieRange < TotalCalories && TotalCalories < HighCalorieRange) {
+            CaloriesInRange = true;
+        }
+    }
+
+    public static void CalculateTotalCal(int Calories) {
+        TotalCalories = TotalCalories + Calories;
+    }
+
+    public static int getTotalCalories() {
+        return TotalCalories;
+    }
+
+    public static int getHighCalorieRange() {
+        long p = Math.round(HighCalorieRange);
+        return Math.round(p);
+    }
+
+    public static int getLowCalorieRange() {
+        long p = Math.round(LowCalorieRange);
+        return Math.round(p);
+    }
+    public static boolean getCaloriesInRange() {
+        return CaloriesInRange;
+    }
+        private int calculateTime (String startTime, String endTime){
+        String ST = startTime;
+        String [] separator = ST.split(":");   
+    }
+}
+
+        
+        
+
+}
 
