@@ -6,6 +6,17 @@ public class Calculator() {
     private static double HighCalorieRange;
     private static boolean CaloriesInRange;
     private static int TotalCalories;
+    private byte burnedCaloriesForLessThan7KpH = 6;//............................................... The MET value for running with less than 7 K/h
+    private double burnedCaloriesForLessThan9KpH = 8.3;//............................................... The MET value for running with less than 9 K/h
+    private double burnedCaloriesForLessThan10KpH = 9.8;//............................................... The MET value for running with less than 10 K/h
+    private byte burnedCaloriesForLessThan12KpH = 11;//............................................... The MET value for running with less than 12 K/h
+    private double burnedCaloriesForLessThan13KpH = 11.8;//............................................... The MET value for running with less than 13 K/h
+    private double burnedCaloriesForLessThan15KpH = 12.8;//............................................... The MET value for running with less than 15 K/h
+    private double burnedCaloriesForLEssThan17KpH = 14.5;//............................................... The MET value for running with less than 17 K/h
+    private byte burnedCaloriesForLessThan18KpH = 16;//............................................... The MET value for running with less than 18 K/h
+    private byte burnedCaloriesForLessThan20KpH = 19;//............................................... The MET value for running with less than 20 K/h
+    private double burnedCaloriesForLessThan22KpH = 19.8;//............................................... The MET value for running with less than 22 K/h
+    private double burnedCaloriesFor22KpHOrMore = 23;//............................................... The MET value for running with 22 K/h or more 
 
     public Calculator() {
         TotalCalories = 0;
@@ -53,9 +64,85 @@ public class Calculator() {
         return CaloriesInRange;
     }
     
-    private int calculateTime (String startTime, String endTime){
-        String ST = startTime;
-        String [] separator = ST.split(":");   
+   private float calculateTime() {//............................................................... Calculates the duration in hours
+        String ST = test.getStartTime();//.......................................................... A string, called ST, is assigned with a get-method from workout, called getStartTime, which returns an string
+        String[] separatorOfST = ST.split(":");//............................................. This splits ST, if the string have a :, and puts it into a String array, called separatorOfST
+
+        String ET = test.getEndTime();//............................................................ A string, called ET, is assigned with a get-method from workout, called getEndTime. which returns an string
+
+        String[] separatorOfET = ET.split(":");//............................................. This splits the ET, if the string have a : , and puts it into a String array, called separatorOfET
+
+
+        float hoursFromET = Integer.parseInt(separatorOfET[0]);//................................... It converts the string in separatorOfET[0] to an integer which is then assigned to hoursFromET
+        float minutesFromET = Integer.parseInt(separatorOfET[1]);//................................. It converts the string in separatorOfET[1] to an integer which is then assigned to minutesFromET
+
+        float hoursFromST = Integer.parseInt(separatorOfST[0]);//................................... It converts the string in separatorOfST[0] to an integer which is then assigned to hoursFromST
+        float minutesFromST = Integer.parseInt(separatorOfST[1]);//................................. It converts the string in separatorOfST[1] to an integer which is then assigned to minutesFromST
+
+
+        return hoursFromET - hoursFromST + (minutesFromET / 60) - (minutesFromST / 60);//........... Returns the duration in hours
+
     }
+    
+     private float calculateKpH()//.................................................................. Calculates Kilometers per hour
+    {
+        Log.d("Time","Hours :"+calculateTime());
+        float distance = test.getDistance();//...................................................... An Integer called distance, that is assigned the getMethod from the workout Class, which returns a int
+        return distance / calculateTime();//........................................................ Returns Kilometers per hour
+
+
+    }
+   private double calculatesBurnedCalories()//..................................................... Calculates the burned Calories
+    {
+
+        float KpH = calculateKpH();//............................................................... An integer, called KpH, that is Assigned the method calculateKpH, which returns and int
+        double BC;//................................................................................ An integer called BC (Burned Calories)
+
+
+        if (KpH < 7)//.............................................................................. An if-Statement that checks if the kilometers per hour is less than 7
+        {
+            BC = burnedCaloriesForLessThan7KpH * 70 * calculateTime();//............................ Assign BC to the calculated burn calories if the user ran with less than 7km/h
+        }
+        else if (KpH < 9){//........................................................................ An else if Statement that checks if KpH is less than 9
+            BC = burnedCaloriesForLessThan9KpH * 70 * calculateTime();//............................ Assign BC to the calculated burn calories if the user ran with less than 9km/h
+        }
+        else if (KpH < 10){//....................................................................... An else if Statement that checks if KpH is less than 10
+            BC = burnedCaloriesForLessThan10KpH * 70 * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 10km/h
+        }
+        else if (KpH < 12 ){//...................................................................... An else if Statement that checks if KpH is less than 12
+            BC = burnedCaloriesForLessThan12KpH * 70 * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 12km/h
+        }
+        else if (KpH < 13){//....................................................................... An else if Statement that checks if KpH is less than 13
+            BC = burnedCaloriesForLessThan13KpH * 70 * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 13km/h
+        }
+        else if (KpH < 15){//....................................................................... An else if Statement that checks if KpH is less than 15
+            BC = burnedCaloriesForLessThan15KpH * 70  * calculateTime();//.......................... Assign BC to the calculated burn calories if the user ran with less than 15km/h
+        }
+        else if (KpH < 17){//....................................................................... An else if Statement that checks if KpH is less than 17
+            BC = burnedCaloriesForLEssThan17KpH * 70 * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 17km/h
+        }
+        else if (KpH < 18){//....................................................................... An else if Statement that checks if KpH is less than 18
+            BC = burnedCaloriesForLessThan18KpH * 70 * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 18km/h
+        }
+        else  if (KpH < 20){//...................................................................... An else if Statement that checks if KpH is less than 20
+            BC = burnedCaloriesForLessThan20KpH * 70 * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 20km/h
+        }
+        else if (KpH < 22){//....................................................................... An else if Statement that checks if KpH is less than 22
+            BC = burnedCaloriesForLessThan22KpH * 70 * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 22km/h
+        }
+        else {//.................................................................................... If neither of the if or else if statements returns true, then this will
+            BC = burnedCaloriesFor22KpHOrMore * 70 * calculateTime();//............................. Assign BC to the calculated burn calories if the user ran with 22km/h or more
+        }
+        Log.d("BC","The Amount Burned "+BC);
+        return BC;//................................................................................ Returns BC
+
+    }
+    
+     public double getCaloriesBurned(){//............................................................ A get method, so that it is possible for other classes to get the burned calories
+        return calculatesBurnedCalories();//........................................................ Returns the value from the method calculatesCalories
+    }
+    
+    
+    
 }
 
