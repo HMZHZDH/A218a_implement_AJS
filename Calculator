@@ -86,12 +86,13 @@ public class Calculator() {
     
      private float calculateKpH()//.................................................................. Calculates Kilometers per hour
     {
-        Log.d("Time","Hours :"+calculateTime());
+       
         float distance = test.getDistance();//...................................................... An Integer called distance, that is assigned the getMethod from the workout Class, which returns a int
         return distance / calculateTime();//........................................................ Returns Kilometers per hour
 
 
     }
+    
    private double calculatesBurnedCalories()//..................................................... Calculates the burned Calories
     {
 
@@ -101,39 +102,39 @@ public class Calculator() {
 
         if (KpH < 7)//.............................................................................. An if-Statement that checks if the kilometers per hour is less than 7
         {
-            BC = burnedCaloriesForLessThan7KpH * 70 * calculateTime();//............................ Assign BC to the calculated burn calories if the user ran with less than 7km/h
+            BC = burnedCaloriesForLessThan7KpH * //PLEASE INSERT WEIGHT * calculateTime();//............................ Assign BC to the calculated burn calories if the user ran with less than 7km/h
         }
         else if (KpH < 9){//........................................................................ An else if Statement that checks if KpH is less than 9
-            BC = burnedCaloriesForLessThan9KpH * 70 * calculateTime();//............................ Assign BC to the calculated burn calories if the user ran with less than 9km/h
+            BC = burnedCaloriesForLessThan9KpH * //PLEASE INSERT WEIGHT * calculateTime();//............................ Assign BC to the calculated burn calories if the user ran with less than 9km/h
         }
         else if (KpH < 10){//....................................................................... An else if Statement that checks if KpH is less than 10
-            BC = burnedCaloriesForLessThan10KpH * 70 * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 10km/h
+            BC = burnedCaloriesForLessThan10KpH * //PLEASE INSERT WEIGHT * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 10km/h
         }
         else if (KpH < 12 ){//...................................................................... An else if Statement that checks if KpH is less than 12
-            BC = burnedCaloriesForLessThan12KpH * 70 * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 12km/h
+            BC = burnedCaloriesForLessThan12KpH * //PLEASE INSERT WEIGHT * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 12km/h
         }
         else if (KpH < 13){//....................................................................... An else if Statement that checks if KpH is less than 13
-            BC = burnedCaloriesForLessThan13KpH * 70 * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 13km/h
+            BC = burnedCaloriesForLessThan13KpH * //PLEASE INSERT WEIGHT * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 13km/h
         }
         else if (KpH < 15){//....................................................................... An else if Statement that checks if KpH is less than 15
-            BC = burnedCaloriesForLessThan15KpH * 70  * calculateTime();//.......................... Assign BC to the calculated burn calories if the user ran with less than 15km/h
+            BC = burnedCaloriesForLessThan15KpH * //PLEASE INSERT WEIGHT * calculateTime();//.......................... Assign BC to the calculated burn calories if the user ran with less than 15km/h
         }
         else if (KpH < 17){//....................................................................... An else if Statement that checks if KpH is less than 17
-            BC = burnedCaloriesForLEssThan17KpH * 70 * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 17km/h
+            BC = burnedCaloriesForLEssThan17KpH * //PLEASE INSERT WEIGHT * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 17km/h
         }
         else if (KpH < 18){//....................................................................... An else if Statement that checks if KpH is less than 18
-            BC = burnedCaloriesForLessThan18KpH * 70 * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 18km/h
+            BC = burnedCaloriesForLessThan18KpH * //PLEASE INSERT WEIGHT * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 18km/h
         }
         else  if (KpH < 20){//...................................................................... An else if Statement that checks if KpH is less than 20
-            BC = burnedCaloriesForLessThan20KpH * 70 * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 20km/h
+            BC = burnedCaloriesForLessThan20KpH * //PLEASE INSERT WEIGHT * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 20km/h
         }
         else if (KpH < 22){//....................................................................... An else if Statement that checks if KpH is less than 22
-            BC = burnedCaloriesForLessThan22KpH * 70 * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 22km/h
+            BC = burnedCaloriesForLessThan22KpH * //PLEASE INSERT WEIGHT * calculateTime();//........................... Assign BC to the calculated burn calories if the user ran with less than 22km/h
         }
         else {//.................................................................................... If neither of the if or else if statements returns true, then this will
-            BC = burnedCaloriesFor22KpHOrMore * 70 * calculateTime();//............................. Assign BC to the calculated burn calories if the user ran with 22km/h or more
+            BC = burnedCaloriesFor22KpHOrMore * //PLEASE INSERT WEIGHT * calculateTime();//............................. Assign BC to the calculated burn calories if the user ran with 22km/h or more
         }
-        Log.d("BC","The Amount Burned "+BC);
+        
         return BC;//................................................................................ Returns BC
 
     }
